@@ -35,7 +35,7 @@
         "no-alert": [0],
         "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
         "no-nested-ternary": 0,
-        "react/prop-types": [2],
+        "react/prop-types": 0,
         "react/require-default-props": [0],
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     }
