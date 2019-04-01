@@ -17,12 +17,18 @@ const Products = ({ products, sortProducts }) =>
             </select>
         </div>
         <div className="list">
-            {products.map(item => <div className="list-row" key={item.id}>
-                <div className="productFace" style={{fontSize: item.size}}>{item.face}</div>
-                <div className="productPrice">{`price: $${formatCurrency(item.price)}`}</div>
-                <div className="productSize">{`font size: ${item.size} px`}</div>
-                <div className="productDate">{formatDate(item.date)}</div>
-            </div> )}
+            {products.map((item, i) => <div key={item.id}>
+                <div className="list-row">
+                    <div className="productFace" style={{fontSize: item.size}}>{item.face}</div>
+                    <div className="productPrice">{`price: $${formatCurrency(item.price)}`}</div>
+                    <div className="productSize">{`font size: ${item.size} px`}</div>
+                    <div className="productDate">{formatDate(item.date)}</div>
+                </div>
+                { (i + 1) % 20 === 0 && <div key={item.id}>
+                    <p>A word from our sponsors:</p>
+                    <img src={`${process.env.API_URL}/ads/?r=${(Math.floor(Math.random()*1000) * (i))}`} alt="advert" />
+                </div>}
+            </div>)}
         </div>
     </div>
 

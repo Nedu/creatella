@@ -64,7 +64,7 @@ class App extends Component {
         const { products, page, isLoading, totalProducts } = this.state
         return (
             <Fragment>
-                <ListWithLoadingWithInfinite isLoading={isLoading} products={products} sortProducts={this.sortProducts} totalProducts={totalProducts} page={page} onPaginatedSearch={this.onPaginatedSearch} />
+            <ListWithLoadingWithInfinite isLoading={isLoading} products={products} sortProducts={this.sortProducts} totalProducts={totalProducts} page={page} onPaginatedSearch={this.onPaginatedSearch} />
                 {products.length === totalProducts ? <div>~ end of catalogue ~</div> : null}
             </Fragment>
         );
